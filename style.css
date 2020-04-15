@@ -1,0 +1,22 @@
+.sign-up-logo{
+    height:100px;
+    width:100px;
+    display: block;
+    position: relative;
+    left: 85px;
+}
+.sign-up{
+    display: block;
+    position: relative;
+    left: 480px;
+    padding-top: 30px;
+}
+.sign-up-border{
+    padding: 30px 30px 30px 30px;
+    border: 1px solid black;
+}
+@media only screen and (max-width: 800px) {
+      .sign-up{
+          left: 0px;
+      }
+}
