@@ -1,5 +1,48 @@
 <?php
  require 'config.php';
+ if(isset($_POST['logout'])){
+     header('Location: login.php');
+     return;
+ }
+ $failure = false;
+ $status_color = 'red';
+ if(isset($_POST['login'])){
+     $username = htmlentities($_POST['user']);
+     $password = htmlentities($_POST['pass']);
+     if(isset($username)&& isset($password)){
+         if(strlen($username)<1||strlen($password)<1){
+             $failure = 'fill all the fields';
+         }
+         if($failure === false)
+         {
+             try{
+                $stmt = $connect->prepare('SELECT id, email, username, password FROM logininfo WHERE username = :username');
+                 $stmt-> execute([
+                    ':username' => $username
+                 ]);
+                 $data = $stmt->fetch(PDO::FETCH_ASSOC);
+                 if($data == false){
+                     $failure = 'Enter correct username';
+                 }
+                 else{
+                     if($password == $data['password']){
+                        $_SESSION['email'] = $data['email'];
+					            	$_SESSION['username'] = $data['username'];
+						           $_SESSION['password'] = $data['password'];
+                        header('Location: profile.php?u='.urlencode($_POST['user']));
+                        return;
+                 }
+                 else{
+                     $failure ="check your password";
+                 }
+
+                }
+         }catch(PDOException $e){
+             $failure =$e->getMessage();
+         }
+     }
+ }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,15 +66,15 @@
 <div class="sign-up col-sm-4">
 <h4>Login To Your Account</h4>
 <?php
-  /*if ( $failure !== false ) 
+  if ( $failure !== false ) 
   {
     echo(
     '<p style="color:' .$status_color.';" class="col-sm-10 col-sm-offset-2">'.
       ($failure).
       "</p>\n"
     );
-  }*/
-              ?>
+  }
+ ?>
 <div class="sign-up-border ">
 <img class="sign-up-logo" src="image\literature.svg" alt="logo">
 <form method="post" >
@@ -47,11 +90,11 @@
       
         <input class="form-control" type="password" name="pass" id="pass">
       </div>
-     
+     <p>Do not have a Memorylane account? <a href="index.php"> Create new account</a> </P>
 
   <div class="form-group">
   
-      <input class="btn btn-primary" type="submit" name="signin" value="Log In">
+      <input class="btn btn-primary" type="submit" name="login" value="Log In">
         <input class="btn" type="submit" name="logout" value="Cancel">
         </div>
     

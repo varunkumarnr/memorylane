@@ -1,0 +1,22 @@
+
+a{
+    color: black;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.nav-pills :hover{
+    background-color: #FDEDEC;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: white ;
+  color: #EC7063;
+}
+.bg-img{
+    display:block;
+    width: 850px;
+    height:170px;
+    overflow: hidden;
+    border: 1px solid black;
+}

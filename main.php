@@ -10,6 +10,6 @@
     <h1>My 2020 Year Planner</h1>
     <span>Days Left</span>
 <p id="demo"></p>
-<script src="script.js"></script>
+<script src="script.js"> </script>
 </body>
 </html>

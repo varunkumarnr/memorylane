@@ -1,0 +1,43 @@
+CREATE DATABASE memorylane;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+//creating login info table
+
+CREATE TABLE `logininfo` (
+  `id` int(10) NOT NULL,
+  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `logininfo`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `logininfo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+  //user DATABASE
+  
+CREATE TABLE `users` (
+  `userid` int(11) NOT NULL,
+  `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surname` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `useremail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender`  enum('male','female') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'male',
+  `userpassword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `github` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bio` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profilepic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `backgroundpic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` enum('public','private') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'public',
+  `signup` datetime NOT NULL,
+  `email_activated` enum('yes','no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no',
+  `last_login` datetime NOT NULL,
+  `pri_ip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pri_os` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pri_browser` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

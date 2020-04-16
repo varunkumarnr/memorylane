@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 if ( isset($_POST['logout'] ) ) {
-  // Redirect the browser to game.php
+  // Redirect the browser to index.php
   header("Location: index.php");
   return;
 }
@@ -64,6 +64,8 @@ if(isset($_POST['signin'])){
   <a class="navbar-brand" href="#">
     <img src="image\literature.svg" width="40" height="40" alt="">
   </a>
+  <button type="button" class="btn btn-light login-btn-desktop"><a href="login.php">Login to an Existing account</a></button>
+  <button type="button" class="btn btn-light login-btn-mobile"><a href="login.php">Login</a></button>
 </nav>
 
   
@@ -84,7 +86,6 @@ if(isset($_POST['signin'])){
 <form method="post" >
   <div class="form-group ">
     <label class="control-label col-sm-2" for="email">Email:</label>
-     
        <input class="form-control" type="text" name="who" id="email">
        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
