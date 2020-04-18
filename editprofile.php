@@ -33,9 +33,20 @@
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
         <form action="" method="post">
+        <div class= form-group>
           <input type="file" class="bg-img-input" name="bg-img" id='bg-img-input'  onchange="loadFile(event)">
-          <img class="bg-img" id="bg-img" src="" alt="background image">
-
+          <img class="bg-img" id="bg-img" src="image\bg-img.jfif" alt="background image">
+          </div>
+          <div class="form-group form-2">
+          <input type="file" class="profile-img-input" name="profile-img" id='profile-img-input'  onchange="profilepic(event)">
+          <img class="profile-img" id="profile-img" src="image\bg-img.jfif" alt="profile image">
+          </div>
+          <div class="form-name">
+           <div class="form-group form-3">
+           <label class="control-label" for="name">Name:</label>
+            <input class="form-control" type="text" name="name" class="name" id="name" value="varun"> 
+           </div>
+           </div>
         </form>
       </div>
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">..2.</div>
@@ -45,7 +56,7 @@
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-<script src="javascript/editprofile.js"></script>
+<script src="javascript\editprofile.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </div>

@@ -14,9 +14,51 @@ a{
   color: #EC7063;
 }
 .bg-img{
+    position: relative;
     display:block;
     width: 850px;
     height:170px;
     overflow: hidden;
     border: 1px solid black;
 }
+.profile-img{
+    position: relative;
+    display: block;
+    width: 150px;
+    height:150px;
+    border: 10px solid white;
+    border-radius: 50%;
+    left: 10px;
+}
+.profile-img-input{
+    position: relative;
+    left:250px;
+    top:120px;
+}
+.form-2{
+    position:relative;
+    top:-120px;   
+}
+.name{
+    position:relative;  
+}
+
+.form-control{
+    border: 1px white;
+    background-color: #FDEDEC;
+    padding: 0px 15px 0px 15px;
+    border-bottom:2px solid black;
+}
+.form-control:focus{
+    background-color: #FDEDEC;
+    border-bottom:2px solid #EC7063;
+    box-shadow: none;
+    background-color: #FDEDEC;
+}
+.form-name{
+    position: relative;
+    background-color: #FDEDEC;
+    top:-120px;  
+    padding: 15px 15px 0px 15px;
+}
+
