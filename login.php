@@ -26,10 +26,12 @@
                  }
                  else{
                      if($password == $data['password']){
+                      session_start();
+                      $_SESSION['loggedin'] = true;
                         $_SESSION['email'] = $data['email'];
 					            	$_SESSION['username'] = $data['username'];
 						           $_SESSION['password'] = $data['password'];
-                        header('Location: profile.php?u='.urlencode($_POST['user']));
+                        header('Location: profile.php');
                         return;
                  }
                  else{
@@ -42,6 +44,8 @@
          }
      }
  }
+ 
+
 }
 ?>
 <!DOCTYPE html>

@@ -61,4 +61,12 @@ a{
     top:-120px;  
     padding: 15px 15px 0px 15px;
 }
+.control-label:focus{
+    color: #EC7063;
+}
+.form-submit{
+    position: relative;
+    top:-120px;  
+
+}
 
