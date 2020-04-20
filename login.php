@@ -16,21 +16,23 @@
          if($failure === false)
          {
              try{
-                $stmt = $connect->prepare('SELECT id, email, username, password FROM logininfo WHERE username = :username');
+                $stmt = $connect->prepare('SELECT userid, useremail, user, userpassword FROM users WHERE user = :username');
                  $stmt-> execute([
                     ':username' => $username
                  ]);
                  $data = $stmt->fetch(PDO::FETCH_ASSOC);
+                 
                  if($data == false){
                      $failure = 'Enter correct username';
                  }
                  else{
-                     if($password == $data['password']){
+                     if($password == $data['userpassword']){
                       session_start();
                       $_SESSION['loggedin'] = true;
-                        $_SESSION['email'] = $data['email'];
-					            	$_SESSION['username'] = $data['username'];
-						           $_SESSION['password'] = $data['password'];
+                      $_SESSION['id'] = $data['userid'];
+                        $_SESSION['email'] = $data['useremail'];
+					            	$_SESSION['username'] = $data['user'];
+						           $_SESSION['password'] = $data['userpassword'];
                         header('Location: profile.php');
                         return;
                  }

@@ -48,6 +48,7 @@ a{
     background-color: #FDEDEC;
     padding: 0px 15px 0px 15px;
     border-bottom:2px solid black;
+    
 }
 .form-control:focus{
     background-color: #FDEDEC;

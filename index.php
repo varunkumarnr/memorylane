@@ -24,14 +24,17 @@ if(isset($_POST['signin'])){
     
     if($failure == false){
       try{
-        $stmt = $connect->prepare("INSERT INTO logininfo (email, username, password)
+        $stmt = $connect->prepare("INSERT INTO users (useremail, user, userpassword)
         VALUES (:email, :username, :password)
         ");
+        $stmt2 = $connect->prepare("INSERT INTO logininfo (email, username, password)
+        VALUES (:email, :username, :password)");
         $stmt-> execute([
           ':email' => $email,
           ':username' => $username,
           ':password' => $password,
         ]);
+        
         header('Location: index.php?action=joined');
         return;
       }
