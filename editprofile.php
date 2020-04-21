@@ -9,7 +9,6 @@ if(!isset($_SESSION))
 { 
 session_start();
 }
-
 $failure = false;
 $status_color = 'red';
 if(isset($_POST['edit'])){
@@ -44,7 +43,6 @@ if(isset($_POST['edit'])){
     }
   }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,10 +149,9 @@ if(isset($_POST['edit'])){
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-<script src="javascript\editprofile.js" ></script>
+<script src="javascript/editprofile.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </div>
-    
 </body>
 </html>
