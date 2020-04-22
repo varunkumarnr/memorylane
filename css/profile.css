@@ -1,67 +1,65 @@
-@media only screen and (max-width: 990px) {
- .profile-side{
-     display:none;
- }
+.bg-img{
+    position: relative;
+    width:100%;
+    height:200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    left:0px;
+    z-index:-1;   
 }
-@media only screen and (max-width: 420px) {
-    .side-nav{
-        display:none;
+@media only screen and (max-width: 440px) {
+    .bg-img{
+        width:414px;
+        height: 120px;
+        left:0px;
+        max-width:120%;
+    }   
+    .profile-img{
+        width:100px;
+        position: relative;
+        bottom: 0px;
+
+    } 
+}
+@media only screen and (max-width: 720px){
+    .bg-img{
+        padding: 10px;
     }
 }
-.side-nav{
-    margin-top: 10px;
-    display: inline-block;
-    left: -10px;
-    
-}
-.material-icons:hover{
-    color: #EC7063;
-    font-family: 'Material Icons';
-    /*font-size: 37px;*/
-}
-
-.nav-icons:hover{
-    background-color:  #FDEDEC;
-    border-radius:50% ;
-}
-ul{
-    list-style-type: none;   
-}
-i{
-    color: black;
-}
-.material-icons{
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 30px; 
-  padding: 10px;
-}
-.profile-nav-image{
+.profile-img{
     position: relative;
-    width: 30px;
     border-radius: 50%;
-    box-sizing: border-box;
-    padding: -10px;   
-    
-    
+    width:150px;
+    height: 150px;
+    border: 10px solid white;
+    bottom:60px;
+    left: 40%;
 }
-
-.profile-nav-image:hover{
-    border: 2px solid #EC7063;
+.nav-profile-containor{
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #f8f9fa;
+    cursor: pointer;
 }
-.nav-bar{
+.name-profile{
+    font-family: 'Roboto Slab', serif;
     position: relative;
-    margin-left: -10px;
+    padding-left:30px;
+    margin-top:10px;   
 }
-.profile-li{
-    padding: 10px;
-    
+.username-profile{
+    position: relative;
+    padding-left: 30px;   
 }
-/*.profile-nav-image:hover{
-    width: 37px;
-}*/
-.active{
-    border: 2px solid #EC7063;
+/*total goals*/
+.goals-count{
+    position: relative;
+    bottom: 100px;
+    left: 10%;
 }
-   
+.goals-title{
+    position: relative;
+    bottom: 100px;
+    left: 10%;
+}

@@ -57,7 +57,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Lane</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style> <?php include 'style.css'; ?></style>
+    <style> <?php include 'css\style.css'; ?></style>
 </head>
 <body>
 <div class="container-fluid">
